@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<display version="2.0.0">
+  <name>Display</name>
+  <width>400</width>
+  <height>40</height>
+  <widget type="rectangle" version="2.0.0">
+    <name>Rectangle</name>
+    <width>400</width>
+    <height>40</height>
+    <line_color>
+      <color red="230" green="230" blue="204">
+      </color>
+    </line_color>
+    <background_color>
+      <color name="Transparent" red="255" green="255" blue="255" alpha="0">
+      </color>
+    </background_color>
+    <transparent>true</transparent>
+  </widget>
+  <widget type="label" version="2.0.0">
+    <name>Ch1Label_17</name>
+    <text>$(CH)</text>
+    <x>10</x>
+    <y>10</y>
+    <width>20</width>
+    <horizontal_alignment>1</horizontal_alignment>
+    <vertical_alignment>1</vertical_alignment>
+  </widget>
+  <widget type="label" version="2.0.0">
+    <name>SnapLabel_14</name>
+    <text>Snap value</text>
+    <x>1256</x>
+    <y>940</y>
+    <width>80</width>
+  </widget>
+  <widget type="textupdate" version="2.0.0">
+    <name>Ch1FrameCtr_16</name>
+    <pv_name>ca://${PREFIX}${DEV}:SNAP${CH}-RBV</pv_name>
+    <x>40</x>
+    <y>10</y>
+    <width>87</width>
+  </widget>
+  <widget type="textupdate" version="2.0.0">
+    <name>Ch1FrameCtr_19</name>
+    <pv_name>ca://${PREFIX}${DEV}:CH${CH}-PUL-CNT-RBV</pv_name>
+    <x>137</x>
+    <y>10</y>
+    <width>120</width>
+    <font>
+      <font family="Source Sans Pro" style="REGULAR" size="12.0">
+      </font>
+    </font>
+  </widget>
+  <widget type="textupdate" version="2.0.0">
+    <name>Ch1FrameCtr_20</name>
+    <pv_name>ca://${PREFIX}${DEV}:CH${CH}-FRM-CNT-RBV</pv_name>
+    <x>267</x>
+    <y>10</y>
+    <width>120</width>
+    <font>
+      <font family="Source Sans Pro" style="REGULAR" size="12.0">
+      </font>
+    </font>
+  </widget>
+  <widget type="label" version="2.0.0">
+    <name>SnapLabel_15</name>
+    <text>Pulse Count</text>
+    <x>1361</x>
+    <y>940</y>
+    <width>90</width>
+  </widget>
+  <widget type="label" version="2.0.0">
+    <name>SnapLabel_16</name>
+    <text>Frame Count</text>
+    <x>1481</x>
+    <y>940</y>
+    <width>90</width>
+  </widget>
+</display>

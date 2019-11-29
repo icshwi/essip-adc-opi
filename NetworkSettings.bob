@@ -1,0 +1,301 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<display version="2.0.0">
+  <name>Display</name>
+  <width>860</width>
+  <height>640</height>
+  <widget type="rectangle" version="2.0.0">
+    <name>Rectangle</name>
+    <width>820</width>
+    <height>600</height>
+    <line_color>
+      <color red="0" green="0" blue="0">
+      </color>
+    </line_color>
+    <background_color>
+      <color name="Background" red="255" green="255" blue="255">
+      </color>
+    </background_color>
+  </widget>
+  <widget type="label" version="2.0.0">
+    <name>Label_16</name>
+    <text>IP Address</text>
+    <x>60</x>
+    <y>112</y>
+  </widget>
+  <widget type="label" version="2.0.0">
+    <name>Label_17</name>
+    <text>UDP Port</text>
+    <x>60</x>
+    <y>142</y>
+  </widget>
+  <widget type="label" version="2.0.0">
+    <name>Label_18</name>
+    <text>MAC Address</text>
+    <x>60</x>
+    <y>172</y>
+  </widget>
+  <widget type="group" version="2.0.0">
+    <name>Source</name>
+    <x>159</x>
+    <y>81</y>
+    <width>289</width>
+    <height>169</height>
+    <widget type="textupdate" version="2.0.0">
+      <name>IPGet_10</name>
+      <pv_name>ca://${PREFIX}${DEV}:IP-SRC-RBV</pv_name>
+      <x>125</x>
+      <y>9</y>
+      <width>115</width>
+      <format>4</format>
+    </widget>
+    <widget type="textupdate" version="2.0.0">
+      <name>PortGet_2</name>
+      <pv_name>ca://${PREFIX}${DEV}:UDPS-RBV</pv_name>
+      <x>125</x>
+      <y>39</y>
+      <width>115</width>
+    </widget>
+    <widget type="textupdate" version="2.0.0">
+      <name>MACGet_2</name>
+      <pv_name>ca://${PREFIX}${DEV}:MAC-SRC-RBV</pv_name>
+      <x>125</x>
+      <y>69</y>
+      <width>115</width>
+      <font>
+        <font family="Source Code Pro" style="REGULAR" size="11.0">
+        </font>
+      </font>
+    </widget>
+    <widget type="textentry" version="3.0.0">
+      <name>IPSet_7</name>
+      <pv_name>ca://${PREFIX}${DEV}:IP-SRC-SP</pv_name>
+      <y>9</y>
+      <width>115</width>
+    </widget>
+    <widget type="textentry" version="3.0.0">
+      <name>PortSet_2</name>
+      <pv_name>ca://${PREFIX}${DEV}:UDPS-SP</pv_name>
+      <y>39</y>
+      <width>115</width>
+    </widget>
+    <widget type="textentry" version="3.0.0">
+      <name>MACSet_2</name>
+      <pv_name>ca://${PREFIX}${DEV}:MAC-SRC-SP</pv_name>
+      <y>69</y>
+      <width>115</width>
+      <font>
+        <font family="Source Code Pro" style="REGULAR" size="11.0">
+        </font>
+      </font>
+    </widget>
+  </widget>
+  <widget type="group" version="2.0.0">
+    <name>Destination</name>
+    <x>441</x>
+    <y>80</y>
+    <width>290</width>
+    <height>170</height>
+    <widget type="textupdate" version="2.0.0">
+      <name>IPGet_11</name>
+      <pv_name>ca://${PREFIX}${DEV}:IP-DST-RBV</pv_name>
+      <x>125</x>
+      <y>9</y>
+      <width>115</width>
+      <format>4</format>
+    </widget>
+    <widget type="textupdate" version="2.0.0">
+      <name>PortGet_3</name>
+      <pv_name>ca://${PREFIX}${DEV}:UDPD-RBV</pv_name>
+      <x>125</x>
+      <y>39</y>
+      <width>115</width>
+    </widget>
+    <widget type="textupdate" version="2.0.0">
+      <name>MACGet_3</name>
+      <pv_name>ca://${PREFIX}${DEV}:MAC-DST-RBV</pv_name>
+      <x>125</x>
+      <y>69</y>
+      <width>115</width>
+      <font>
+        <font family="Source Code Pro" style="REGULAR" size="11.0">
+        </font>
+      </font>
+    </widget>
+    <widget type="textentry" version="3.0.0">
+      <name>IPSet_8</name>
+      <pv_name>ca://${PREFIX}${DEV}:IP-DST-SP</pv_name>
+      <y>9</y>
+      <width>115</width>
+    </widget>
+    <widget type="textentry" version="3.0.0">
+      <name>PortSet_3</name>
+      <pv_name>ca://${PREFIX}${DEV}:UDPD-SP</pv_name>
+      <y>39</y>
+      <width>115</width>
+    </widget>
+    <widget type="textentry" version="3.0.0">
+      <name>MACSet_3</name>
+      <pv_name>ca://${PREFIX}${DEV}:MAC-DST-SP</pv_name>
+      <y>69</y>
+      <width>115</width>
+      <font>
+        <font family="Source Code Pro" style="REGULAR" size="11.0">
+        </font>
+      </font>
+    </widget>
+  </widget>
+  <widget type="label" version="2.0.0">
+    <name>Label_19</name>
+    <text>${PREFIX}${DEV} Network Settings</text>
+    <x>60</x>
+    <y>10</y>
+    <width>460</width>
+    <height>50</height>
+    <font>
+      <font family="Liberation Sans" style="BOLD" size="22.0">
+      </font>
+    </font>
+  </widget>
+  <widget type="group" version="2.0.0">
+    <name>Packet Settings</name>
+    <x>159</x>
+    <y>250</y>
+    <width>572</width>
+    <height>330</height>
+    <widget type="group" version="2.0.0">
+      <name>Group</name>
+      <x>73</x>
+      <y>212</y>
+      <width>346</width>
+      <height>20</height>
+      <style>3</style>
+      <transparent>true</transparent>
+      <widget type="textentry" version="3.0.0">
+        <name>TimeoutSetField_3</name>
+        <pv_name>ca://${PREFIX}${DEV}:PTO-SP</pv_name>
+        <x>150</x>
+        <width>112</width>
+        <format>1</format>
+      </widget>
+      <widget type="textupdate" version="2.0.0">
+        <name>TimeoutGetField_3</name>
+        <pv_name>ca://${PREFIX}${DEV}:PTO-RBV</pv_name>
+        <x>272</x>
+        <width>115</width>
+        <format>1</format>
+      </widget>
+      <widget type="label" version="2.0.0">
+        <name>Timeout description_8</name>
+        <text>Keep Alive Interval</text>
+        <x>22</x>
+        <width>129</width>
+      </widget>
+    </widget>
+    <widget type="choice" version="2.0.0">
+      <name>Action Button_21</name>
+      <pv_name>$(PREFIX)${DEV}:ACQ-MODE-SP</pv_name>
+      <x>223</x>
+      <y>242</y>
+      <width>237</width>
+      <height>30</height>
+      <actions>
+      </actions>
+      <tooltip>$(actions)</tooltip>
+      <items>
+        <item>Continuous</item>
+        <item>Triggered</item>
+      </items>
+      <items_from_pv>false</items_from_pv>
+    </widget>
+    <widget type="label" version="2.0.0">
+      <name>Timeout description_9</name>
+      <text>Packet Formation</text>
+      <x>95</x>
+      <y>252</y>
+      <width>150</width>
+    </widget>
+    <widget type="label" version="2.0.0">
+      <name>Label_23</name>
+      <text>Ch</text>
+      <x>96</x>
+      <y>12</y>
+      <width>19</width>
+    </widget>
+  </widget>
+  <widget type="embedded" version="2.0.0">
+    <name>Embedded Display_2</name>
+    <file>C:/Users/jgc87821/Documents/CSS/bm-adc-opi/NetworkChannel.bob</file>
+    <macros>
+      <CH>1</CH>
+    </macros>
+    <x>260</x>
+    <y>298</y>
+    <height>40</height>
+    <resize>2</resize>
+  </widget>
+  <widget type="embedded" version="2.0.0">
+    <name>Embedded Display_3</name>
+    <file>C:/Users/jgc87821/Documents/CSS/bm-adc-opi/NetworkChannel.bob</file>
+    <macros>
+      <CH>2</CH>
+    </macros>
+    <x>260</x>
+    <y>338</y>
+    <height>40</height>
+    <resize>2</resize>
+  </widget>
+  <widget type="embedded" version="2.0.0">
+    <name>Embedded Display_4</name>
+    <file>C:/Users/jgc87821/Documents/CSS/bm-adc-opi/NetworkChannel.bob</file>
+    <macros>
+      <CH>3</CH>
+    </macros>
+    <x>260</x>
+    <y>378</y>
+    <height>40</height>
+    <resize>2</resize>
+  </widget>
+  <widget type="embedded" version="2.0.0">
+    <name>Embedded Display_5</name>
+    <file>C:/Users/jgc87821/Documents/CSS/bm-adc-opi/NetworkChannel.bob</file>
+    <macros>
+      <CH>4</CH>
+    </macros>
+    <x>260</x>
+    <y>418</y>
+    <height>40</height>
+    <resize>2</resize>
+  </widget>
+  <widget type="label" version="2.0.0">
+    <name>Label_20</name>
+    <text>Snap Value</text>
+    <x>303</x>
+    <y>280</y>
+    <width>77</width>
+  </widget>
+  <widget type="label" version="2.0.0">
+    <name>Label_21</name>
+    <text>Packet Count</text>
+    <x>403</x>
+    <y>280</y>
+    <width>87</width>
+  </widget>
+  <widget type="label" version="2.0.0">
+    <name>Label_22</name>
+    <text>Frame Count</text>
+    <x>535</x>
+    <y>280</y>
+    <width>135</width>
+  </widget>
+  <widget type="choice" version="2.0.0">
+    <name>Choice Button_1</name>
+    <x>793</x>
+    <y>450</y>
+    <width>1</width>
+    <height>1</height>
+    <items>
+      <item>Item 1</item>
+      <item>Item 2</item>
+    </items>
+  </widget>
+</display>

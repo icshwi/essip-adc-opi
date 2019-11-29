@@ -1,0 +1,453 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<display version="2.0.0">
+  <name>Display</name>
+  <macros>
+    <EVR>EVR-01</EVR>
+  </macros>
+  <width>1024</width>
+  <height>700</height>
+  <actions>
+    <action type="open_display">
+      <file>C:/Users/jgc87821/.ess-cs-studio/CSS/dmsc_detector_interfaceApp/op/bob/SPIdebug.bob</file>
+      <target>window</target>
+      <description>Open Display</description>
+    </action>
+  </actions>
+  <scripts>
+    <script file="EmbeddedPy">
+      <text><![CDATA[
+
+from org.csstudio.display.builder.runtime.script import PVUtil
+pv0 = PVUtil.getDouble(pvs[0])
+if pv0!="":
+    widget.setPropertyValue('tabs[0].name', pv0)
+else:
+    widget.setPropertyValue('tabs[0].name', "TabName")
+]]></text>
+      <pv_name>$(PREFIX)RO2:ID-L-RBV</pv_name>
+    </script>
+  </scripts>
+  <widget type="rectangle" version="2.0.0">
+    <name>Rectangle_1</name>
+    <y>50</y>
+    <width>1024</width>
+    <height>650</height>
+    <line_color>
+      <color name="Header_Background" red="77" green="77" blue="77">
+      </color>
+    </line_color>
+    <background_color>
+      <color name="Transparent" red="255" green="255" blue="255" alpha="0">
+      </color>
+    </background_color>
+  </widget>
+  <widget type="rectangle" version="2.0.0">
+    <name>Rectangle</name>
+    <class>TITLE-BAR</class>
+    <width>1024</width>
+    <height>50</height>
+    <line_width>0</line_width>
+    <background_color>
+      <color name="PRIMARY-HEADER-BACKGROUND" red="151" green="188" blue="202">
+      </color>
+    </background_color>
+  </widget>
+  <widget type="label" version="2.0.0">
+    <name>NetworkTitle</name>
+    <class>TITLE</class>
+    <text>$(PREFIX)$(DEV)</text>
+    <x use_class="true">0</x>
+    <y use_class="true">0</y>
+    <width>900</width>
+    <height>50</height>
+    <font use_class="true">
+      <font name="Header 1" family="Liberation Sans" style="BOLD" size="22.0">
+      </font>
+    </font>
+    <foreground_color use_class="true">
+      <color name="Text" red="0" green="0" blue="0">
+      </color>
+    </foreground_color>
+    <transparent use_class="true">true</transparent>
+    <vertical_alignment>1</vertical_alignment>
+    <wrap_words>false</wrap_words>
+  </widget>
+  <widget type="label" version="2.0.0">
+    <name>Label</name>
+    <class>SUBTITLE</class>
+    <text>ESSIP</text>
+    <x>730</x>
+    <y>10</y>
+    <width>270</width>
+    <height>30</height>
+    <font>
+      <font name="Header 2" family="Liberation Sans" style="BOLD" size="18.0">
+      </font>
+    </font>
+    <foreground_color>
+      <color name="HEADER-TEXT" red="0" green="0" blue="0">
+      </color>
+    </foreground_color>
+    <horizontal_alignment>2</horizontal_alignment>
+    <vertical_alignment>2</vertical_alignment>
+    <wrap_words>false</wrap_words>
+  </widget>
+  <widget type="action_button" version="3.0.0">
+    <name>Action Button_5</name>
+    <actions>
+      <action type="open_webpage">
+        <url>https://confluence.esss.lu.se/display/IS/Detector+Readout+Demonstrator+GUI</url>
+        <description>Open Webpage</description>
+      </action>
+    </actions>
+    <text>Help</text>
+    <x>690</x>
+    <y>10</y>
+    <width>75</width>
+    <tooltip>$(actions)</tooltip>
+  </widget>
+  <widget type="label" version="2.0.0">
+    <name>Timeout description_6</name>
+    <text>USB device ID</text>
+    <x>460</x>
+    <y>20</y>
+  </widget>
+  <widget type="textupdate" version="2.0.0">
+    <name>IPGet_5</name>
+    <pv_name>ca://$(PREFIX)$(DEV):ID-L-RBV</pv_name>
+    <x>570</x>
+    <y>20</y>
+    <format>4</format>
+  </widget>
+  <widget type="group" version="2.0.0">
+    <name>Peak Detection Parameters</name>
+    <x>20</x>
+    <y>405</y>
+    <width>470</width>
+    <height>210</height>
+    <widget type="textupdate" version="2.0.0">
+      <name>IPGet_13</name>
+      <pv_name>ca://${PREFIX}${DEV}:RH-RBV</pv_name>
+      <x>275</x>
+      <y>57</y>
+      <width>115</width>
+      <format>1</format>
+    </widget>
+    <widget type="textupdate" version="2.0.0">
+      <name>PortGet_5</name>
+      <pv_name>ca://${PREFIX}${DEV}:FH-RBV</pv_name>
+      <x>275</x>
+      <y>87</y>
+      <width>115</width>
+    </widget>
+    <widget type="textupdate" version="2.0.0">
+      <name>MACGet_6</name>
+      <pv_name>ca://${PREFIX}${DEV}:SMPSB-RBV</pv_name>
+      <x>275</x>
+      <y>117</y>
+      <width>115</width>
+    </widget>
+    <widget type="textentry" version="3.0.0">
+      <name>IPSet_11</name>
+      <pv_name>ca://${PREFIX}${DEV}:RH-SP</pv_name>
+      <x>150</x>
+      <y>57</y>
+      <width>115</width>
+      <format>1</format>
+    </widget>
+    <widget type="textentry" version="3.0.0">
+      <name>PortSet_5</name>
+      <pv_name>ca://${PREFIX}${DEV}:FH-SP</pv_name>
+      <x>150</x>
+      <y>87</y>
+      <width>115</width>
+      <format>1</format>
+    </widget>
+    <widget type="textentry" version="3.0.0">
+      <name>MACSet_6</name>
+      <pv_name>ca://${PREFIX}${DEV}:SMPSB-SP</pv_name>
+      <x>150</x>
+      <y>117</y>
+      <width>115</width>
+    </widget>
+    <widget type="textentry" version="3.0.0">
+      <name>MACSet_7</name>
+      <pv_name>ca://${PREFIX}${DEV}:SMPSA-SP</pv_name>
+      <x>150</x>
+      <y>147</y>
+      <width>115</width>
+    </widget>
+    <widget type="textupdate" version="2.0.0">
+      <name>MACGet_7</name>
+      <pv_name>ca://${PREFIX}${DEV}:SMPSA-RBV</pv_name>
+      <x>274</x>
+      <y>147</y>
+      <width>115</width>
+    </widget>
+    <widget type="label" version="2.0.0">
+      <name>ThresholdLabel_25</name>
+      <text>Rising Hold</text>
+      <x>50</x>
+      <y>57</y>
+      <width>80</width>
+    </widget>
+    <widget type="label" version="2.0.0">
+      <name>ThresholdLabel_28</name>
+      <text>Falling Hold</text>
+      <x>48</x>
+      <y>85</y>
+      <width>132</width>
+    </widget>
+    <widget type="label" version="2.0.0">
+      <name>ThresholdLabel_33</name>
+      <text>Samples Before</text>
+      <x>40</x>
+      <y>117</y>
+      <width>132</width>
+    </widget>
+    <widget type="label" version="2.0.0">
+      <name>ThresholdLabel_34</name>
+      <text>Samples After</text>
+      <x>40</x>
+      <y>147</y>
+      <width>132</width>
+    </widget>
+  </widget>
+  <widget type="group" version="2.0.0">
+    <name>Channel settings</name>
+    <x>20</x>
+    <y>125</y>
+    <width>978</width>
+    <height>280</height>
+    <widget type="label" version="2.0.0">
+      <name>ChNrLabel_15</name>
+      <text>#</text>
+      <y>22</y>
+      <width>40</width>
+      <height>30</height>
+      <horizontal_alignment>1</horizontal_alignment>
+    </widget>
+    <widget type="label" version="2.0.0">
+      <name>ActiveLabel_1</name>
+      <text>Active</text>
+      <x>42</x>
+      <y>22</y>
+      <width>60</width>
+      <height>30</height>
+      <horizontal_alignment>1</horizontal_alignment>
+    </widget>
+    <widget type="label" version="2.0.0">
+      <name>RangeLabel_1</name>
+      <text>Range</text>
+      <x>273</x>
+      <y>22</y>
+      <width>88</width>
+      <height>30</height>
+      <horizontal_alignment>1</horizontal_alignment>
+    </widget>
+    <widget type="label" version="2.0.0">
+      <name>RangeLabel_2</name>
+      <text>Impedance</text>
+      <x>152</x>
+      <y>22</y>
+      <width>132</width>
+      <height>30</height>
+      <horizontal_alignment>1</horizontal_alignment>
+    </widget>
+    <widget type="label" version="2.0.0">
+      <name>ActiveLabel_2</name>
+      <text>Gnd Input</text>
+      <x>92</x>
+      <y>22</y>
+      <width>90</width>
+      <height>30</height>
+      <horizontal_alignment>1</horizontal_alignment>
+    </widget>
+    <widget type="label" version="2.0.0">
+      <name>OffsetLabel_1</name>
+      <text>Offset</text>
+      <x>519</x>
+      <y>22</y>
+      <width>92</width>
+      <height>30</height>
+      <horizontal_alignment>1</horizontal_alignment>
+    </widget>
+    <widget type="label" version="2.0.0">
+      <name>RangeLabel_4</name>
+      <text>Readback</text>
+      <x>387</x>
+      <y>22</y>
+      <width>122</width>
+      <height>30</height>
+      <horizontal_alignment>1</horizontal_alignment>
+    </widget>
+    <widget type="embedded" version="2.0.0">
+      <name>Embedded Display</name>
+      <file>channel.bob</file>
+      <macros>
+        <ADC-SEL-BIT>0</ADC-SEL-BIT>
+        <CH>1</CH>
+      </macros>
+      <y>42</y>
+      <width>943</width>
+      <height>40</height>
+    </widget>
+    <widget type="embedded" version="2.0.0">
+      <name>Embedded Display_1</name>
+      <file>channel.bob</file>
+      <macros>
+        <ADC-SEL-BIT>1</ADC-SEL-BIT>
+        <CH>2</CH>
+      </macros>
+      <y>99</y>
+      <width>932</width>
+      <height>40</height>
+    </widget>
+    <widget type="embedded" version="2.0.0">
+      <name>Embedded Display_2</name>
+      <file>channel.bob</file>
+      <macros>
+        <ADC-SEL-BIT>2</ADC-SEL-BIT>
+        <CH>3</CH>
+      </macros>
+      <y>149</y>
+      <width>932</width>
+      <height>40</height>
+    </widget>
+    <widget type="embedded" version="2.0.0">
+      <name>Embedded Display_3</name>
+      <file>channel.bob</file>
+      <macros>
+        <ADC-SEL-BIT>3</ADC-SEL-BIT>
+        <CH>4</CH>
+      </macros>
+      <y>199</y>
+      <width>932</width>
+      <height>40</height>
+    </widget>
+    <widget type="label" version="2.0.0">
+      <name>OffsetLabel_2</name>
+      <text>Threshold</text>
+      <x>634</x>
+      <y>22</y>
+      <width>92</width>
+      <height>30</height>
+      <horizontal_alignment>1</horizontal_alignment>
+    </widget>
+    <widget type="label" version="2.0.0">
+      <name>OffsetLabel_3</name>
+      <text>Buffer Overflow Count</text>
+      <x>832</x>
+      <y>2</y>
+      <width>111</width>
+      <height>50</height>
+      <horizontal_alignment>1</horizontal_alignment>
+    </widget>
+  </widget>
+  <widget type="bool_button" version="2.0.0">
+    <name>Boolean Button</name>
+    <pv_name>$(PREFIX)$(DEV):RST-SP</pv_name>
+    <x>270</x>
+    <y>65</y>
+    <width>173</width>
+    <height>47</height>
+    <off_label>Disabled</off_label>
+    <off_color>
+      <color name="LED-RED-ON" red="255" green="60" blue="46">
+      </color>
+    </off_color>
+    <on_label>Enabled</on_label>
+    <on_color>
+      <color name="LED-GREEN-ON" red="70" green="255" blue="70">
+      </color>
+    </on_color>
+  </widget>
+  <widget type="picture" version="2.0.0">
+    <name>Picture</name>
+    <file>C:/Users/jgc87821/Documents/CSS/bm-adc-opi/ThresholdDiagramCrop.png</file>
+    <x>557</x>
+    <y>405</y>
+    <width>393</width>
+    <height>245</height>
+  </widget>
+  <widget type="action_button" version="3.0.0">
+    <name>Action Button</name>
+    <actions>
+      <action type="open_display">
+        <file>C:/Users/jgc87821/Documents/CSS/bm-adc-opi/NetworkSettings.bob</file>
+        <macros>
+          <DEV>$(DEV)</DEV>
+          <PREFIX>$(PREFIX)</PREFIX>
+        </macros>
+        <target>window</target>
+        <description>Network Setttings</description>
+      </action>
+    </actions>
+    <text>$(actions) $(DEV)</text>
+    <x>634</x>
+    <y>65</y>
+    <width>173</width>
+    <height>47</height>
+    <tooltip>$(actions)</tooltip>
+  </widget>
+  <widget type="action_button" version="3.0.0">
+    <name>Action Button_1</name>
+    <actions>
+      <action type="open_display">
+        <file>C:/Users/jgc87821/Documents/CSS/bm-adc-opi/StatusComm.bob</file>
+        <macros>
+          <DEV>$(DEV)</DEV>
+          <PREFIX>$(PREFIX)</PREFIX>
+        </macros>
+        <target>window</target>
+        <description>Status and Config</description>
+      </action>
+    </actions>
+    <text>$(actions) $(DEV)</text>
+    <x>814</x>
+    <y>65</y>
+    <width>173</width>
+    <height>47</height>
+    <tooltip>$(actions)</tooltip>
+  </widget>
+  <widget type="action_button" version="3.0.0">
+    <name>Action Button_2</name>
+    <actions>
+      <action type="open_display">
+        <file>main.bob</file>
+        <macros>
+          <EVR>$(EVR)</EVR>
+          <PREFIX>$(PREFIX)</PREFIX>
+        </macros>
+        <target>replace</target>
+        <description>Open Display</description>
+      </action>
+    </actions>
+    <text>Main Menu</text>
+    <x>29</x>
+    <y>65</y>
+    <width>154</width>
+    <height>47</height>
+    <tooltip>$(actions)</tooltip>
+  </widget>
+  <widget type="action_button" version="3.0.0">
+    <name>Action Button_3</name>
+    <actions>
+      <action type="open_display">
+        <file>TimingSettings.bob</file>
+        <macros>
+          <DEV>$(DEV)</DEV>
+          <PREFIX>$(PREFIX)</PREFIX>
+        </macros>
+        <target>window</target>
+        <description>Timing Setttings</description>
+      </action>
+    </actions>
+    <text>$(actions) $(DEV)</text>
+    <x>452</x>
+    <y>65</y>
+    <width>173</width>
+    <height>47</height>
+    <tooltip>$(actions)</tooltip>
+  </widget>
+</display>

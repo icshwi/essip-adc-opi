@@ -1,0 +1,597 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<display version="2.0.0">
+  <name>Display</name>
+  <width>850</width>
+  <height>800</height>
+  <widget type="rectangle" version="2.0.0">
+    <name>Rectangle</name>
+    <width>820</width>
+    <height>780</height>
+    <line_color>
+      <color red="0" green="0" blue="0">
+      </color>
+    </line_color>
+    <background_color>
+      <color name="Background" red="255" green="255" blue="255">
+      </color>
+    </background_color>
+  </widget>
+  <widget type="label" version="2.0.0">
+    <name>Label_19</name>
+    <text>${PREFIX}${DEV}  Timing </text>
+    <x>60</x>
+    <y>10</y>
+    <width>460</width>
+    <height>50</height>
+    <font>
+      <font family="Liberation Sans" style="BOLD" size="22.0">
+      </font>
+    </font>
+  </widget>
+  <widget type="group" version="2.0.0">
+    <name>$(EVR)</name>
+    <macros>
+      <RO1FP>12</RO1FP>
+      <RO2FP>10</RO2FP>
+    </macros>
+    <x>60</x>
+    <y>50</y>
+    <width>310</width>
+    <height>703</height>
+    <widget type="label" version="2.0.0">
+      <name>Label_30</name>
+      <text>Evt16 Sent Sec</text>
+      <x>9</x>
+      <y>19</y>
+    </widget>
+    <widget type="textupdate" version="2.0.0">
+      <name>IPGet_18</name>
+      <pv_name>ca://$(PREFIX)$(EVR):CheckSec-RBV</pv_name>
+      <x>129</x>
+      <y>19</y>
+      <width>115</width>
+      <format>1</format>
+    </widget>
+    <widget type="textupdate" version="2.0.0">
+      <name>IPGet_19</name>
+      <pv_name>ca://$(PREFIX)$(EVR):CheckNsec-RBV</pv_name>
+      <x>129</x>
+      <y>49</y>
+      <width>115</width>
+      <format>1</format>
+    </widget>
+    <widget type="label" version="2.0.0">
+      <name>Label_31</name>
+      <text>Evt16 Sent Tick</text>
+      <x>9</x>
+      <y>49</y>
+      <width>130</width>
+      <height>50</height>
+    </widget>
+    <widget type="bool_button" version="2.0.0">
+      <name>Boolean Button_5</name>
+      <pv_name>$(PREFIX)$(EVR):detSyncState-SP</pv_name>
+      <x>79</x>
+      <y>199</y>
+      <width>110</width>
+      <height>50</height>
+      <off_label>Check Sync</off_label>
+      <off_color>
+        <color red="80" green="255" blue="255">
+        </color>
+      </off_color>
+      <on_label>Init Sync</on_label>
+      <on_color>
+        <color red="255" green="255" blue="26">
+        </color>
+      </on_color>
+      <show_led>false</show_led>
+      <actions>
+        <action type="write_pv">
+          <pv_name>ca://$(PREFIX)$(EVR):detSyncState-SP</pv_name>
+          <value>1</value>
+          <description>Write PV</description>
+        </action>
+      </actions>
+    </widget>
+    <widget type="textupdate" version="2.0.0">
+      <name>IPGet_20</name>
+      <pv_name>ca://$(PREFIX)$(EVR):detSyncState-RBV</pv_name>
+      <x>129</x>
+      <y>259</y>
+      <width>95</width>
+      <height>30</height>
+      <format>6</format>
+    </widget>
+    <widget type="textentry" version="3.0.0">
+      <name>IPSet</name>
+      <pv_name>ca://$(PREFIX)$(EVR):FracNsecDelta-SP</pv_name>
+      <x>128</x>
+      <y>105</y>
+      <width>115</width>
+    </widget>
+    <widget type="label" version="2.0.0">
+      <name>Label_33</name>
+      <text>TicksDelta</text>
+      <x>9</x>
+      <y>105</y>
+    </widget>
+    <widget type="label" version="2.0.0">
+      <name>Label_34</name>
+      <text>EVR Time Valid</text>
+      <x>9</x>
+      <y>169</y>
+      <width>190</width>
+    </widget>
+    <widget type="textupdate" version="2.0.0">
+      <name>IPGet_21</name>
+      <pv_name>ca://$(PREFIX)$(EVR):Time-Valid-Sts</pv_name>
+      <x>129</x>
+      <y>169</y>
+      <width>85</width>
+      <format>6</format>
+    </widget>
+    <widget type="label" version="2.0.0">
+      <name>Label_35</name>
+      <text>Detector Time Sync State</text>
+      <x>9</x>
+      <y>249</y>
+      <height>49</height>
+    </widget>
+    <widget type="led" version="2.0.0">
+      <name>LED_3</name>
+      <pv_name>$(PREFIX)$(EVR):Time-Valid-Sts</pv_name>
+      <x>224</x>
+      <y>170</y>
+      <height>19</height>
+      <off_color>
+        <color red="255" green="0" blue="0">
+        </color>
+      </off_color>
+    </widget>
+    <widget type="label" version="2.0.0">
+      <name>Label_53</name>
+      <text>RO1 Clock</text>
+      <x>9</x>
+      <y>309</y>
+    </widget>
+    <widget type="bool_button" version="2.0.0">
+      <name>Boolean Button_8</name>
+      <pv_name>$(PREFIX)$(EVR):OutFPUV$(RO1FP)-Ena-SP</pv_name>
+      <x>124</x>
+      <y>299</y>
+      <actions>
+        <action type="write_pv">
+          <pv_name>ca://$(PREFIX)$(EVR):OutFPUV$(RO1FP)-Ena-SP</pv_name>
+          <value>1</value>
+          <description>Write PV</description>
+        </action>
+      </actions>
+    </widget>
+    <widget type="label" version="2.0.0">
+      <name>Label_56</name>
+      <text>RO2 Clock</text>
+      <x>9</x>
+      <y>352</y>
+    </widget>
+    <widget type="bool_button" version="2.0.0">
+      <name>Boolean Button_10</name>
+      <pv_name>$(PREFIX)$(EVR):OutFPUV$(RO2FP)-Ena-SP</pv_name>
+      <x>124</x>
+      <y>352</y>
+      <actions>
+        <action type="write_pv">
+          <pv_name>ca://$(PREFIX)$(EVR):OutFPUV$(RO2FP)-Ena-SP</pv_name>
+          <value>1</value>
+          <description>Write PV</description>
+        </action>
+      </actions>
+    </widget>
+  </widget>
+  <widget type="group" version="2.0.0">
+    <name>RO2</name>
+    <macros>
+      <DEV>RO2</DEV>
+    </macros>
+    <x>421</x>
+    <y>403</y>
+    <width>330</width>
+    <height>350</height>
+    <widget type="textupdate" version="2.0.0">
+      <name>IPGet_44</name>
+      <pv_name>ca://$(PREFIX)$(DEV):STATUS2-RBV</pv_name>
+      <x>109</x>
+      <y>9</y>
+      <width>115</width>
+      <format>4</format>
+    </widget>
+    <widget type="label" version="2.0.0">
+      <name>Label_63</name>
+      <text>STATUS2</text>
+      <x>9</x>
+      <y>9</y>
+    </widget>
+    <widget type="label" version="2.0.0">
+      <name>Label_64</name>
+      <text>Seconds</text>
+      <x>9</x>
+      <y>39</y>
+    </widget>
+    <widget type="textupdate" version="2.0.0">
+      <name>IPGet_45</name>
+      <pv_name>ca://$(PREFIX)$(DEV):TSU-RBV</pv_name>
+      <x>109</x>
+      <y>39</y>
+      <width>115</width>
+      <format>1</format>
+    </widget>
+    <widget type="textupdate" version="2.0.0">
+      <name>IPGet_46</name>
+      <pv_name>ca://$(PREFIX)$(DEV):TSL-RBV</pv_name>
+      <x>109</x>
+      <y>69</y>
+      <width>115</width>
+      <format>1</format>
+    </widget>
+    <widget type="label" version="2.0.0">
+      <name>Label_65</name>
+      <text>Ticks</text>
+      <x>9</x>
+      <y>69</y>
+    </widget>
+    <widget type="bool_button" version="2.0.0">
+      <name>Boolean Button_12</name>
+      <pv_name>ca://$(PREFIX)$(DEV):RST-SP</pv_name>
+      <x>9</x>
+      <y>110</y>
+      <off_label>Reset</off_label>
+      <off_color>
+        <color red="255" green="60" blue="60">
+        </color>
+      </off_color>
+      <on_label>Enable</on_label>
+      <show_led>false</show_led>
+      <actions>
+        <action type="write_pv">
+          <pv_name>ca://$(PREFIX)$(DEV):RST-SP</pv_name>
+          <value>1</value>
+          <description>Write PV</description>
+        </action>
+      </actions>
+    </widget>
+    <widget type="led" version="2.0.0">
+      <name>LED_8</name>
+      <pv_name>ca://$(PREFIX)$(DEV):RST-RBV</pv_name>
+      <x>159</x>
+      <y>110</y>
+      <width>30</width>
+      <height>30</height>
+      <off_color>
+        <color red="60" green="255" blue="60">
+        </color>
+      </off_color>
+      <on_color>
+        <color red="255" green="60" blue="60">
+        </color>
+      </on_color>
+    </widget>
+    <widget type="textupdate" version="2.0.0">
+      <name>IPGet_47</name>
+      <pv_name>ca://$(PREFIX)$(DEV):TS-SDiff-RBV</pv_name>
+      <x>108</x>
+      <y>219</y>
+      <width>115</width>
+      <format>1</format>
+    </widget>
+    <widget type="label" version="2.0.0">
+      <name>Label_66</name>
+      <text>Seconds Diff</text>
+      <x>9</x>
+      <y>219</y>
+      <width>119</width>
+    </widget>
+    <widget type="label" version="2.0.0">
+      <name>Label_67</name>
+      <text>Frac Diff</text>
+      <x>9</x>
+      <y>249</y>
+      <width>119</width>
+    </widget>
+    <widget type="textupdate" version="2.0.0">
+      <name>IPGet_48</name>
+      <pv_name>ca://$(PREFIX)$(DEV):TS-NDiff-RBV</pv_name>
+      <x>108</x>
+      <y>249</y>
+      <width>115</width>
+      <format>1</format>
+    </widget>
+    <widget type="array" version="2.0.0">
+      <name>Array_3</name>
+      <x>139</x>
+      <y>239</y>
+      <width>1</width>
+      <height>1</height>
+    </widget>
+    <widget type="multi_state_led" version="2.0.0">
+      <name>LED (Multi State)_1</name>
+      <x>59</x>
+      <y>269</y>
+      <width>1</width>
+      <height>1</height>
+      <states>
+        <state>
+          <value>0</value>
+          <label>State 1</label>
+          <color>
+            <color name="Off" red="60" green="100" blue="60">
+            </color>
+          </color>
+        </state>
+        <state>
+          <value>1</value>
+          <label>State 2</label>
+          <color>
+            <color name="On" red="0" green="255" blue="0">
+            </color>
+          </color>
+        </state>
+      </states>
+    </widget>
+    <widget type="label" version="2.0.0">
+      <name>Label_76</name>
+      <text>Total Diff</text>
+      <x>10</x>
+      <y>279</y>
+      <width>119</width>
+    </widget>
+    <widget type="textupdate" version="2.0.0">
+      <name>IPGet_55</name>
+      <pv_name>ca://$(PREFIX)$(DEV):TS-Diff-RBV</pv_name>
+      <x>108</x>
+      <y>279</y>
+      <width>115</width>
+      <format>1</format>
+    </widget>
+    <widget type="choice" version="2.0.0">
+      <name>ClockSource_12</name>
+      <pv_name>ca://$(PREFIX)$(DEV):CLKSEL-SP</pv_name>
+      <x>92</x>
+      <y>169</y>
+      <width>183</width>
+      <height>27</height>
+      <items>
+        <item>Internal</item>
+        <item>External</item>
+      </items>
+      <items_from_pv>false</items_from_pv>
+    </widget>
+    <widget type="label" version="2.0.0">
+      <name>Label_85</name>
+      <text>Clk Src</text>
+      <x>9</x>
+      <y>177</y>
+      <width>119</width>
+    </widget>
+  </widget>
+  <widget type="group" version="2.0.0">
+    <name>RO1</name>
+    <macros>
+      <DEV>RO1</DEV>
+    </macros>
+    <x>420</x>
+    <y>53</y>
+    <width>330</width>
+    <height>350</height>
+    <widget type="textupdate" version="2.0.0">
+      <name>IPGet_56</name>
+      <pv_name>ca://$(PREFIX)$(DEV):STATUS2-RBV</pv_name>
+      <x>109</x>
+      <y>9</y>
+      <width>115</width>
+      <format>4</format>
+    </widget>
+    <widget type="label" version="2.0.0">
+      <name>Label_77</name>
+      <text>STATUS2</text>
+      <x>9</x>
+      <y>9</y>
+    </widget>
+    <widget type="label" version="2.0.0">
+      <name>Label_78</name>
+      <text>Seconds</text>
+      <x>9</x>
+      <y>39</y>
+    </widget>
+    <widget type="textupdate" version="2.0.0">
+      <name>IPGet_57</name>
+      <pv_name>ca://$(PREFIX)$(DEV):TSU-RBV</pv_name>
+      <x>109</x>
+      <y>39</y>
+      <width>115</width>
+      <format>1</format>
+    </widget>
+    <widget type="textupdate" version="2.0.0">
+      <name>IPGet_58</name>
+      <pv_name>ca://$(PREFIX)$(DEV):TSL-RBV</pv_name>
+      <x>109</x>
+      <y>69</y>
+      <width>115</width>
+      <format>1</format>
+    </widget>
+    <widget type="label" version="2.0.0">
+      <name>Label_79</name>
+      <text>Ticks</text>
+      <x>9</x>
+      <y>69</y>
+    </widget>
+    <widget type="bool_button" version="2.0.0">
+      <name>Boolean Button_13</name>
+      <pv_name>ca://$(PREFIX)$(DEV):RST-SP</pv_name>
+      <x>9</x>
+      <y>110</y>
+      <off_label>Reset</off_label>
+      <off_color>
+        <color red="255" green="60" blue="60">
+        </color>
+      </off_color>
+      <on_label>Enable</on_label>
+      <show_led>false</show_led>
+      <actions>
+        <action type="write_pv">
+          <pv_name>ca://$(PREFIX)$(DEV):RST-SP</pv_name>
+          <value>1</value>
+          <description>Write PV</description>
+        </action>
+      </actions>
+    </widget>
+    <widget type="led" version="2.0.0">
+      <name>LED_9</name>
+      <pv_name>ca://$(PREFIX)$(DEV):RST-RBV</pv_name>
+      <x>159</x>
+      <y>110</y>
+      <width>30</width>
+      <height>30</height>
+      <off_color>
+        <color red="60" green="255" blue="60">
+        </color>
+      </off_color>
+      <on_color>
+        <color red="255" green="60" blue="60">
+        </color>
+      </on_color>
+    </widget>
+    <widget type="textupdate" version="2.0.0">
+      <name>IPGet_59</name>
+      <pv_name>ca://$(PREFIX)$(DEV):TS-SDiff-RBV</pv_name>
+      <x>108</x>
+      <y>219</y>
+      <width>115</width>
+      <format>1</format>
+    </widget>
+    <widget type="label" version="2.0.0">
+      <name>Label_80</name>
+      <text>Seconds Diff</text>
+      <x>9</x>
+      <y>219</y>
+      <width>119</width>
+    </widget>
+    <widget type="label" version="2.0.0">
+      <name>Label_81</name>
+      <text>Frac Diff</text>
+      <x>9</x>
+      <y>249</y>
+      <width>119</width>
+    </widget>
+    <widget type="textupdate" version="2.0.0">
+      <name>IPGet_60</name>
+      <pv_name>ca://$(PREFIX)$(DEV):TS-NDiff-RBV</pv_name>
+      <x>108</x>
+      <y>249</y>
+      <width>115</width>
+      <format>1</format>
+    </widget>
+    <widget type="choice" version="2.0.0">
+      <name>ClockSource_10</name>
+      <pv_name>ca://$(PREFIX)$(DEV):CLKSEL-SP</pv_name>
+      <x>92</x>
+      <y>159</y>
+      <width>183</width>
+      <height>27</height>
+      <items>
+        <item>Internal</item>
+        <item>External</item>
+      </items>
+      <items_from_pv>false</items_from_pv>
+    </widget>
+    <widget type="array" version="2.0.0">
+      <name>Array_4</name>
+      <x>139</x>
+      <y>239</y>
+      <width>1</width>
+      <height>1</height>
+    </widget>
+    <widget type="multi_state_led" version="2.0.0">
+      <name>LED (Multi State)_2</name>
+      <x>59</x>
+      <y>269</y>
+      <width>1</width>
+      <height>1</height>
+      <states>
+        <state>
+          <value>0</value>
+          <label>State 1</label>
+          <color>
+            <color name="Off" red="60" green="100" blue="60">
+            </color>
+          </color>
+        </state>
+        <state>
+          <value>1</value>
+          <label>State 2</label>
+          <color>
+            <color name="On" red="0" green="255" blue="0">
+            </color>
+          </color>
+        </state>
+      </states>
+    </widget>
+    <widget type="label" version="2.0.0">
+      <name>Label_82</name>
+      <text>Clk Src</text>
+      <x>9</x>
+      <y>167</y>
+      <width>119</width>
+    </widget>
+    <widget type="textupdate" version="2.0.0">
+      <name>IPGet_61</name>
+      <pv_name>ca://$(PREFIX)$(DEV):TS-Diff-RBV</pv_name>
+      <x>109</x>
+      <y>280</y>
+      <width>115</width>
+      <format>1</format>
+    </widget>
+    <widget type="label" version="2.0.0">
+      <name>Label_83</name>
+      <text>Total Diff</text>
+      <x>9</x>
+      <y>279</y>
+      <width>119</width>
+    </widget>
+  </widget>
+  <widget type="polyline" version="2.0.0">
+    <name>Polyline_1</name>
+    <x>316</x>
+    <y>353</y>
+    <width>114</width>
+    <height>30</height>
+    <line_color>
+      <color name="BLACK" red="0" green="0" blue="0">
+      </color>
+    </line_color>
+    <arrows>2</arrows>
+    <points>
+      <point x="0.0" y="30.268560888933052">
+      </point>
+      <point x="114.28574828433051" y="0.0">
+      </point>
+    </points>
+  </widget>
+  <widget type="polyline" version="2.0.0">
+    <name>Polyline_2</name>
+    <x>321</x>
+    <y>438</y>
+    <width>104</width>
+    <height>202</height>
+    <line_color>
+      <color name="BLACK" red="0" green="0" blue="0">
+      </color>
+    </line_color>
+    <arrows>2</arrows>
+    <points>
+      <point x="0.0" y="0.0">
+      </point>
+      <point x="104.19233828818102" y="202.3387349843332">
+      </point>
+    </points>
+  </widget>
+</display>

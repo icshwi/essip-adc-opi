@@ -1,0 +1,162 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<display version="2.0.0">
+  <name>Display</name>
+  <macros>
+    <EVR>EVR-01</EVR>
+    <PREFIX>ESSIP-DET:TS-</PREFIX>
+    <TITLE>ESSIP</TITLE>
+  </macros>
+  <width>1024</width>
+  <height>700</height>
+  <widget type="rectangle" version="2.0.0">
+    <name>Rectangle_1</name>
+    <y>50</y>
+    <width>1024</width>
+    <height>650</height>
+    <line_color>
+      <color name="Header_Background" red="77" green="77" blue="77">
+      </color>
+    </line_color>
+    <background_color>
+      <color name="Transparent" red="255" green="255" blue="255" alpha="0">
+      </color>
+    </background_color>
+  </widget>
+  <widget type="rectangle" version="2.0.0">
+    <name>Rectangle</name>
+    <class>TITLE-BAR</class>
+    <width>1024</width>
+    <height>50</height>
+    <line_width>0</line_width>
+    <background_color>
+      <color name="PRIMARY-HEADER-BACKGROUND" red="151" green="188" blue="202">
+      </color>
+    </background_color>
+  </widget>
+  <widget type="label" version="2.0.0">
+    <name>Label</name>
+    <class>TITLE</class>
+    <text>Main screen</text>
+    <x use_class="true">0</x>
+    <y use_class="true">0</y>
+    <width>440</width>
+    <height>50</height>
+    <font use_class="true">
+      <font name="Header 1" family="Liberation Sans" style="BOLD" size="22.0">
+      </font>
+    </font>
+    <foreground_color use_class="true">
+      <color name="Text" red="0" green="0" blue="0">
+      </color>
+    </foreground_color>
+    <transparent use_class="true">true</transparent>
+    <vertical_alignment>1</vertical_alignment>
+    <wrap_words>false</wrap_words>
+  </widget>
+  <widget type="action_button" version="3.0.0">
+    <name>Action Button</name>
+    <actions>
+      <action type="open_display">
+        <file>DAQ.bob</file>
+        <macros>
+          <DEV>RO1</DEV>
+          <EVR>$(EVR)</EVR>
+          <PREFIX>$(PREFIX)</PREFIX>
+        </macros>
+        <target>replace</target>
+        <description>Open Display</description>
+      </action>
+    </actions>
+    <text>$(actions) RO1</text>
+    <x>480</x>
+    <y>240</y>
+    <width>170</width>
+    <tooltip>$(actions)</tooltip>
+  </widget>
+  <widget type="action_button" version="3.0.0">
+    <name>Action Button_2</name>
+    <actions>
+      <action type="open_display">
+        <file>DAQ.bob</file>
+        <macros>
+          <DEV>RO2</DEV>
+          <EVR>$(EVR)</EVR>
+          <PREFIX>$(PREFIX)</PREFIX>
+        </macros>
+        <target>replace</target>
+        <description>Open Display</description>
+      </action>
+    </actions>
+    <text>$(actions) RO2</text>
+    <x>480</x>
+    <y>280</y>
+    <width>170</width>
+    <tooltip>$(actions)</tooltip>
+  </widget>
+  <widget type="textupdate" version="2.0.0">
+    <name>IPGet_5</name>
+    <pv_name>ca://$(PREFIX)RO1:ID-L-RBV</pv_name>
+    <x>370</x>
+    <y>246</y>
+    <format>4</format>
+  </widget>
+  <widget type="label" version="2.0.0">
+    <name>Timeout description_6</name>
+    <text>Device ID</text>
+    <x>380</x>
+    <y>220</y>
+    <font>
+      <font family="Liberation Sans" style="BOLD" size="18.0">
+      </font>
+    </font>
+  </widget>
+  <widget type="textupdate" version="2.0.0">
+    <name>IPGet_6</name>
+    <pv_name>ca://$(PREFIX)RO2:ID-L-RBV</pv_name>
+    <x>370</x>
+    <y>285</y>
+    <format>4</format>
+  </widget>
+  <widget type="label" version="2.0.0">
+    <name>Timeout description_7</name>
+    <text>RO2</text>
+    <x>330</x>
+    <y>285</y>
+    <width>40</width>
+    <font>
+      <font family="Liberation Sans" style="BOLD" size="18.0">
+      </font>
+    </font>
+  </widget>
+  <widget type="label" version="2.0.0">
+    <name>Timeout description_8</name>
+    <text>RO1</text>
+    <x>330</x>
+    <y>246</y>
+    <width>40</width>
+    <font>
+      <font family="Liberation Sans" style="BOLD" size="18.0">
+      </font>
+    </font>
+  </widget>
+  <widget type="label" version="2.0.0">
+    <name>Label_1</name>
+    <class>SUBTITLE</class>
+    <text>$(TITLE)</text>
+    <x>730</x>
+    <y>10</y>
+    <width>270</width>
+    <height>30</height>
+    <font>
+      <font name="Header 2" family="Liberation Sans" style="BOLD" size="18.0">
+      </font>
+    </font>
+    <foreground_color>
+      <color name="HEADER-TEXT" red="0" green="0" blue="0">
+      </color>
+    </foreground_color>
+    <horizontal_alignment>2</horizontal_alignment>
+    <vertical_alignment>2</vertical_alignment>
+    <wrap_words>false</wrap_words>
+  </widget>
+</display>

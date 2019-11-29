@@ -1,0 +1,119 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<display version="2.0.0">
+  <name>Display</name>
+  <width>930</width>
+  <height>40</height>
+  <widget type="rectangle" version="2.0.0">
+    <name>Rectangle</name>
+    <class>GROUP-YELLOW</class>
+    <width>930</width>
+    <height>40</height>
+    <line_width>1</line_width>
+    <line_color>
+      <color name="YELLOW-GROUP-BORDER" red="168" green="158" blue="135">
+      </color>
+    </line_color>
+    <background_color>
+      <color name="Transparent" red="255" green="255" blue="255" alpha="0">
+      </color>
+    </background_color>
+  </widget>
+  <widget type="label" version="2.0.0">
+    <name>Ch1Label_17</name>
+    <text>$(CH)</text>
+    <x>10</x>
+    <y>10</y>
+    <width>20</width>
+    <horizontal_alignment>1</horizontal_alignment>
+    <vertical_alignment>1</vertical_alignment>
+  </widget>
+  <widget type="led" version="2.0.0">
+    <name>Ch1Led_3</name>
+    <pv_name>ca://${PREFIX}${DEV}:ADC-SEL-RBV</pv_name>
+    <bit>$(ADC-SEL-BIT)</bit>
+    <x>50</x>
+    <y>10</y>
+  </widget>
+  <widget type="checkbox" version="2.0.0">
+    <name>Ch1OnSelect_3</name>
+    <pv_name>ca://${PREFIX}${DEV}:ADC-SEL-SP</pv_name>
+    <bit>$(ADC-SEL-BIT)</bit>
+    <label></label>
+    <x>80</x>
+    <y>10</y>
+    <width>19</width>
+    <actions>
+    </actions>
+  </widget>
+  <widget type="combo" version="2.0.0">
+    <name>Ch1Gain_4</name>
+    <pv_name>ca://${PREFIX}${DEV}:RANGE-CH$(CH)-SP</pv_name>
+    <x>290</x>
+    <y>10</y>
+    <height>20</height>
+    <items>
+      <item>50 Ohms</item>
+      <item>1K Ohm</item>
+    </items>
+  </widget>
+  <widget type="checkbox" version="2.0.0">
+    <name>Action Button_14</name>
+    <pv_name>$(PREFIX)$(DEV):GND-CH$(CH)-SP</pv_name>
+    <label></label>
+    <x>130</x>
+    <y>10</y>
+    <width>20</width>
+    <actions>
+    </actions>
+    <tooltip>Ground input</tooltip>
+    <show_confirm_dialog>false</show_confirm_dialog>
+  </widget>
+  <widget type="textupdate" version="2.0.0">
+    <name>TimeoutGetField_8</name>
+    <pv_name>ca://${PREFIX}${DEV}:GAIN-CH$(CH)-RBV</pv_name>
+    <x>410</x>
+    <y>10</y>
+    <width>120</width>
+    <format>6</format>
+    <vertical_alignment>1</vertical_alignment>
+  </widget>
+  <widget type="textentry" version="3.0.0">
+    <name>Ch1Offset_2</name>
+    <pv_name>ca://${PREFIX}${DEV}:OFF-CH$(CH)-SP</pv_name>
+    <x>540</x>
+    <y>10</y>
+    <precision>3</precision>
+  </widget>
+  <widget type="combo" version="2.0.0">
+    <name>Ch1Gain_5</name>
+    <pv_name>ca://${PREFIX}${DEV}:IMP-CH$(CH)-SP</pv_name>
+    <x>180</x>
+    <y>10</y>
+    <height>20</height>
+  </widget>
+  <widget type="textentry" version="3.0.0">
+    <name>Ch1ThresholdSet_10</name>
+    <pv_name>ca://${PREFIX}${DEV}:T-CH${CH}-SP</pv_name>
+    <x>650</x>
+    <y>10</y>
+    <width>78</width>
+    <format>1</format>
+    <precision>4</precision>
+  </widget>
+  <widget type="textupdate" version="2.0.0">
+    <name>Ch1ThresholdGet_14</name>
+    <pv_name>ca://${PREFIX}${DEV}:T-CH${CH}-RBV</pv_name>
+    <x>738</x>
+    <y>10</y>
+    <width>80</width>
+    <format>1</format>
+    <precision>4</precision>
+  </widget>
+  <widget type="textupdate" version="2.0.0">
+    <name>Ch1FrameCtr_63</name>
+    <pv_name>ca://${PREFIX}${DEV}:CH${CH}-BFOV-RBV</pv_name>
+    <x>840</x>
+    <y>10</y>
+    <width>84</width>
+  </widget>
+</display>
