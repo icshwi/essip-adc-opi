@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <display version="2.0.0">
-  <name>Detector Demonstrator DAQ</name>
+  <name>$(DEV) DAQ </name>
   <macros>
     <EVR>EVR-01</EVR>
   </macros>
