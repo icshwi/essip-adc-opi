@@ -212,6 +212,36 @@ else:
       <y>147</y>
       <width>132</width>
     </widget>
+    <widget type="combo" version="2.0.0">
+      <name>Action Button_21</name>
+      <pv_name>$(PREFIX)${DEV}:ACQ-MODE-SP</pv_name>
+      <x>150</x>
+      <y>17</y>
+      <width>115</width>
+      <actions>
+      </actions>
+      <tooltip>$(actions)</tooltip>
+      <items>
+        <item>Continuous</item>
+        <item>Triggered</item>
+      </items>
+    </widget>
+    <widget type="textupdate" version="2.0.0">
+      <name>IPGet_14</name>
+      <pv_name>$(PREFIX)${DEV}:ACQ-MODE-RBV</pv_name>
+      <x>275</x>
+      <y>24</y>
+      <width>115</width>
+      <format>6</format>
+    </widget>
+    <widget type="label" version="2.0.0">
+      <name>Timeout description_9</name>
+      <text>Triggering</text>
+      <x>40</x>
+      <y>23</y>
+      <width>90</width>
+      <horizontal_alignment>2</horizontal_alignment>
+    </widget>
   </widget>
   <widget type="group" version="2.0.0">
     <name>Channel settings</name>
@@ -351,14 +381,14 @@ else:
     <y>65</y>
     <width>173</width>
     <height>47</height>
-    <off_label>Disabled</off_label>
+    <off_label>Enabled</off_label>
     <off_color>
-      <color name="LED-RED-ON" red="255" green="60" blue="46">
+      <color name="OK" red="0" green="255" blue="0">
       </color>
     </off_color>
-    <on_label>Enabled</on_label>
+    <on_label>Disabled</on_label>
     <on_color>
-      <color name="LED-GREEN-ON" red="70" green="255" blue="70">
+      <color name="MAJOR" red="255" green="0" blue="0">
       </color>
     </on_color>
   </widget>
@@ -374,7 +404,7 @@ else:
     <name>Action Button</name>
     <actions>
       <action type="open_display">
-        <file>C:/Users/jgc87821/Documents/CSS/bm-adc-opi/NetworkSettings.bob</file>
+        <file>NetworkSettings.bob</file>
         <macros>
           <DEV>$(DEV)</DEV>
           <PREFIX>$(PREFIX)</PREFIX>
@@ -394,7 +424,7 @@ else:
     <name>Action Button_1</name>
     <actions>
       <action type="open_display">
-        <file>C:/Users/jgc87821/Documents/CSS/bm-adc-opi/StatusComm.bob</file>
+        <file>StatusComm.bob</file>
         <macros>
           <DEV>$(DEV)</DEV>
           <PREFIX>$(PREFIX)</PREFIX>
