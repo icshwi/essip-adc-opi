@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <display version="2.0.0">
-  <name>Display</name>
+  <name>Detector Demonstrator Timing</name>
   <width>850</width>
   <height>800</height>
   <widget type="rectangle" version="2.0.0">
@@ -239,42 +239,6 @@
       <x>9</x>
       <y>69</y>
     </widget>
-    <widget type="bool_button" version="2.0.0">
-      <name>Boolean Button_12</name>
-      <pv_name>ca://$(PREFIX)$(DEV):RST-SP</pv_name>
-      <x>9</x>
-      <y>110</y>
-      <off_label>Reset</off_label>
-      <off_color>
-        <color red="255" green="60" blue="60">
-        </color>
-      </off_color>
-      <on_label>Enable</on_label>
-      <show_led>false</show_led>
-      <actions>
-        <action type="write_pv">
-          <pv_name>ca://$(PREFIX)$(DEV):RST-SP</pv_name>
-          <value>1</value>
-          <description>Write PV</description>
-        </action>
-      </actions>
-    </widget>
-    <widget type="led" version="2.0.0">
-      <name>LED_8</name>
-      <pv_name>ca://$(PREFIX)$(DEV):RST-RBV</pv_name>
-      <x>159</x>
-      <y>110</y>
-      <width>30</width>
-      <height>30</height>
-      <off_color>
-        <color red="60" green="255" blue="60">
-        </color>
-      </off_color>
-      <on_color>
-        <color red="255" green="60" blue="60">
-        </color>
-      </on_color>
-    </widget>
     <widget type="textupdate" version="2.0.0">
       <name>IPGet_47</name>
       <pv_name>ca://$(PREFIX)$(DEV):TS-SDiff-RBV</pv_name>
@@ -355,9 +319,9 @@
     <widget type="choice" version="2.0.0">
       <name>ClockSource_12</name>
       <pv_name>ca://$(PREFIX)$(DEV):CLKSEL-SP</pv_name>
-      <x>92</x>
+      <x>109</x>
       <y>169</y>
-      <width>183</width>
+      <width>115</width>
       <height>27</height>
       <items>
         <item>Internal</item>
@@ -371,6 +335,24 @@
       <x>9</x>
       <y>177</y>
       <width>119</width>
+    </widget>
+    <widget type="bool_button" version="2.0.0">
+      <name>Boolean Button_1</name>
+      <pv_name>$(PREFIX)$(DEV):RST-SP</pv_name>
+      <x>109</x>
+      <y>109</y>
+      <width>115</width>
+      <height>37</height>
+      <off_label>Enabled</off_label>
+      <off_color>
+        <color name="OK" red="0" green="255" blue="0">
+        </color>
+      </off_color>
+      <on_label>Disabled</on_label>
+      <on_color>
+        <color name="MAJOR" red="255" green="0" blue="0">
+        </color>
+      </on_color>
     </widget>
   </widget>
   <widget type="group" version="2.0.0">
@@ -424,42 +406,6 @@
       <x>9</x>
       <y>69</y>
     </widget>
-    <widget type="bool_button" version="2.0.0">
-      <name>Boolean Button_13</name>
-      <pv_name>ca://$(PREFIX)$(DEV):RST-SP</pv_name>
-      <x>9</x>
-      <y>110</y>
-      <off_label>Reset</off_label>
-      <off_color>
-        <color red="255" green="60" blue="60">
-        </color>
-      </off_color>
-      <on_label>Enable</on_label>
-      <show_led>false</show_led>
-      <actions>
-        <action type="write_pv">
-          <pv_name>ca://$(PREFIX)$(DEV):RST-SP</pv_name>
-          <value>1</value>
-          <description>Write PV</description>
-        </action>
-      </actions>
-    </widget>
-    <widget type="led" version="2.0.0">
-      <name>LED_9</name>
-      <pv_name>ca://$(PREFIX)$(DEV):RST-RBV</pv_name>
-      <x>159</x>
-      <y>110</y>
-      <width>30</width>
-      <height>30</height>
-      <off_color>
-        <color red="60" green="255" blue="60">
-        </color>
-      </off_color>
-      <on_color>
-        <color red="255" green="60" blue="60">
-        </color>
-      </on_color>
-    </widget>
     <widget type="textupdate" version="2.0.0">
       <name>IPGet_59</name>
       <pv_name>ca://$(PREFIX)$(DEV):TS-SDiff-RBV</pv_name>
@@ -493,9 +439,9 @@
     <widget type="choice" version="2.0.0">
       <name>ClockSource_10</name>
       <pv_name>ca://$(PREFIX)$(DEV):CLKSEL-SP</pv_name>
-      <x>92</x>
-      <y>159</y>
-      <width>183</width>
+      <x>109</x>
+      <y>163</y>
+      <width>115</width>
       <height>27</height>
       <items>
         <item>Internal</item>
@@ -556,6 +502,24 @@
       <x>9</x>
       <y>279</y>
       <width>119</width>
+    </widget>
+    <widget type="bool_button" version="2.0.0">
+      <name>Boolean Button</name>
+      <pv_name>$(PREFIX)$(DEV):RST-SP</pv_name>
+      <x>109</x>
+      <y>102</y>
+      <width>115</width>
+      <height>37</height>
+      <off_label>Enabled</off_label>
+      <off_color>
+        <color name="OK" red="0" green="255" blue="0">
+        </color>
+      </off_color>
+      <on_label>Disabled</on_label>
+      <on_color>
+        <color name="MAJOR" red="255" green="0" blue="0">
+        </color>
+      </on_color>
     </widget>
   </widget>
   <widget type="polyline" version="2.0.0">

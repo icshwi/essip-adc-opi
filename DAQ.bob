@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <display version="2.0.0">
-  <name>Display</name>
+  <name>Detector Demonstrator DAQ</name>
   <macros>
     <EVR>EVR-01</EVR>
   </macros>
@@ -466,14 +466,12 @@ else:
       <action type="open_display">
         <file>TimingSettings.bob</file>
         <macros>
-          <DEV>$(DEV)</DEV>
           <PREFIX>$(PREFIX)</PREFIX>
         </macros>
         <target>window</target>
         <description>Timing Setttings</description>
       </action>
     </actions>
-    <text>$(actions) $(DEV)</text>
     <x>452</x>
     <y>65</y>
     <width>173</width>
